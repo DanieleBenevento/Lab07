@@ -1,5 +1,6 @@
 package it.polito.tdp.poweroutages;
 	
+import it.polito.tdp.poweroutages.model.Model;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -17,6 +18,11 @@ public class Main extends Application {
 			
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			
+			Model model=new Model();
+			PowerOutagesController controller=loader.getController();
+			controller.setModel(model);
+			
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
